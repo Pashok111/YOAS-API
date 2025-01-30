@@ -1,0 +1,12 @@
+*.idea/
+*.venv/
+*.mypy_cache/
+*__pycache__/
+db_n_logs/
+*.DS_Store
+*.db
+*.log
+*test*
+users-dump*
+.env
+.KEY

@@ -1,0 +1,15 @@
+name: yoas-api
+
+services:
+  api:
+    build: .
+    env_file:
+      - .env
+      - .KEY
+    volumes:
+      - yoas:/app/db_n_logs
+    ports:
+      - "${PORT}:${PORT}"
+
+volumes:
+  yoas:
