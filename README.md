@@ -19,7 +19,7 @@ After this you have several ways to run an API:
 - Docker:
     - **Optional**: Copy `.env.example` to `.env` and edit it.
     - `docker volume create yoas-api_yoas` - create a volume for the database (name it like this for simple migrate to Docker Compose).
-    - `docker build -t yoas .` for building an image with secret `KEY` file.
+    - `docker build -t yoas .` for building an image.
     - `docker run -p 8000:8000 --mount type=volume,src=yoas-api_yoas,target=/app/db_n_logs --env-file .KEY --name yoas_container yoas` - run a container with name `yoas_container`, with publishing `8000` port, mounting a volume `yoas-api_yoas` to the `/app/db_n_logs` directory in a container and using `.KEY` environment file. You can add `-d` for run it in background, `--rm` for deleting container when it exits and `-e HOST=0.0.0.0 -e PORT=8000` for setting environment variables for a container (especially if you don't do anything with `.env` file).
     - Stop container with `docker stop <CONTAINER_NAME>` for just stop a container, `docker rm -f <CONTAINER_NAME>` for stop and delete a container or just press `Ctrl+C` if it in foreground to stop it.
 - Bash scripts:
